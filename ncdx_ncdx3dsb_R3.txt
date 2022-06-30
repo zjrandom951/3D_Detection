@@ -1,0 +1,6 @@
+STARRT
+Goal_ID=CB003;Num=1
+END
+STARRT
+Goal_ID=CB003;Num=1
+END
