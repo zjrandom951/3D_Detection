@@ -1,3 +1,5 @@
+# An object Detection method based on YOLOv5
+
 <div align="center">
 <p>
    <a align="left" href="https://ultralytics.com/yolov5" target="_blank">
@@ -45,7 +47,6 @@
 YOLOv5 🚀 is a family of object detection architectures and models pretrained on the COCO dataset, and represents <a href="https://ultralytics.com">Ultralytics</a>
  open-source research into future vision AI methods, incorporating lessons learned and best practices evolved over thousands of hours of research and development.
 </p>
-
 <!-- 
 <a align="center" href="https://ultralytics.com/yolov5" target="_blank">
 <img width="800" src="https://github.com/ultralytics/yolov5/releases/download/v1.0/banner-api.png"></a>
@@ -138,155 +139,123 @@ $ python train.py --data coco.yaml --cfg yolov5s.yaml --weights '' --batch-size 
 
 </details>  
 
-<details open>
-<summary>Tutorials</summary>
+1 硬件配置说明
 
-* [Train Custom Data](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data)&nbsp; 🚀 RECOMMENDED
-* [Tips for Best Training Results](https://github.com/ultralytics/yolov5/wiki/Tips-for-Best-Training-Results)&nbsp; ☘️
-  RECOMMENDED
-* [Weights & Biases Logging](https://github.com/ultralytics/yolov5/issues/1289)&nbsp; 🌟 NEW
-* [Roboflow for Datasets, Labeling, and Active Learning](https://github.com/ultralytics/yolov5/issues/4975)&nbsp; 🌟 NEW
-* [Multi-GPU Training](https://github.com/ultralytics/yolov5/issues/475)
-* [PyTorch Hub](https://github.com/ultralytics/yolov5/issues/36)&nbsp; ⭐ NEW
-* [TorchScript, ONNX, CoreML Export](https://github.com/ultralytics/yolov5/issues/251) 🚀
-* [Test-Time Augmentation (TTA)](https://github.com/ultralytics/yolov5/issues/303)
-* [Model Ensembling](https://github.com/ultralytics/yolov5/issues/318)
-* [Model Pruning/Sparsity](https://github.com/ultralytics/yolov5/issues/304)
-* [Hyperparameter Evolution](https://github.com/ultralytics/yolov5/issues/607)
-* [Transfer Learning with Frozen Layers](https://github.com/ultralytics/yolov5/issues/1314)&nbsp; ⭐ NEW
-* [TensorRT Deployment](https://github.com/wang-xinyu/tensorrtx)
+1.1 计算平台
 
-</details>
+| ***\*GPU\****          | 128-core Maxwell                                           |
+| ---------------------- | ---------------------------------------------------------- |
+| ***\*CPU\****          | Quad-core ARM A57@1.43GHz                                  |
+| ***\*Memory\****       | 4GB 64-bit LPDDR4 25.6GB/s                                 |
+| ***\*Storage\****      | microSD(not included)                                      |
+| ***\*Video Encode\**** | 4K@30\|4x 1080p @30\|9x 720p @30 (H.264/H.265)             |
+| ***\*Video Decode\**** | 4K@60\|2x 4K @30\|8x 1080p @30\|18x 720p @30 (H.264/H.265) |
+| ***\*Camera\****       | 1x MIPI CSI-2 DPHY lanes                                   |
+| ***\*Connectivity\**** | Gigabit Ethernet, M.2 Key E                                |
+| ***\*Display\****      | HDMI 2.0 and eDP 1.4                                       |
+| ***\*USB\****          | 4x USB 3.0, USB 2.0 Micro-B                                |
+| ***\*Others\****       | GPIO, I2C, I2S, SPI, UART                                  |
+| ***\*Mechanical\****   | 69mm×45mm, 260-pin edge connector                          |
 
-## <div align="center">Environments</div>
+1.2 摄像头
 
-Get started in seconds with our verified environments. Click each icon below for details.
+摄像头使用大赛组委会规定 Intel SR300，具体参数如下：
 
-<div align="center">
-    <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb">
-        <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-colab-small.png" width="15%"/>
-    </a>
-    <a href="https://www.kaggle.com/ultralytics/yolov5">
-        <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-kaggle-small.png" width="15%"/>
-    </a>
-    <a href="https://hub.docker.com/r/ultralytics/yolov5">
-        <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-docker-small.png" width="15%"/>
-    </a>
-    <a href="https://github.com/ultralytics/yolov5/wiki/AWS-Quickstart">
-        <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-aws-small.png" width="15%"/>
-    </a>
-    <a href="https://github.com/ultralytics/yolov5/wiki/GCP-Quickstart">
-        <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-gcp-small.png" width="15%"/>
-    </a>
-</div>  
+| ***\*基本要素\****                                    |                         |
+| ----------------------------------------------------- | ----------------------- |
+| ***\*产品集\****                                      | 英特尔® 实感™ 摄像头    |
+| ***\*状态\****                                        | Launched                |
+| ***\*发行日期\****                                    | Q1'16                   |
+| ***\*深度技术\****                                    | Coded Light             |
+| ***\*操作规范\****                                    |                         |
+| ***\*操作范围（最小\**** ***\*-\**** ***\*最大）\**** | 0.3m - 2m               |
+| ***\*深度分辨率和 FPS\****                            | VGA 30fps               |
+| ***\*视野深度\****                                    | H: 73, V: 59, D: 90     |
+| ***\*补充信息\****                                    |                         |
+| ***\*数据表\****                                      | 立即查看                |
+| ***\*组件\****                                        |                         |
+| ***\*RGB 传感器\****                                  | 是                      |
+| ***\*跟踪模块\****                                    | 否                      |
+| ***\*模块规格\****                                    |                         |
+| ***\*尺寸\****                                        | 110mm x 12.5mm x 3.75mm |
+| ***\*电源\****                                        | 1.8 W                   |
+| ***\*系统接口类型\****                                | USB3                    |
 
-## <div align="center">Integrations</div>
+2 软件环境配置
 
-<div align="center">
-    <a href="https://wandb.ai/site?utm_campaign=repo_yolo_readme">
-        <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-wb-long.png" width="49%"/>
-    </a>
-    <a href="https://roboflow.com/?ref=ultralytics">
-        <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-roboflow-long.png" width="49%"/>
-    </a>
-</div>
+| ***\*操作系统\**** | Ubantu18.04 |
+| ------------------ | ----------- |
+| ***\*Python\****   | 3.8         |
+| ***\*CUDA\****     | 10.2        |
+| ***\*Pytorch\****  | 1.6.0       |
+| ***\*Opecncv\****  | 4.5.1       |
 
-|Weights and Biases|Roboflow ⭐ NEW|
-|:-:|:-:|
-|Automatically track and visualize all your YOLOv5 training runs in the cloud with [Weights & Biases](https://wandb.ai/site?utm_campaign=repo_yolo_readme)|Label and automatically export your custom datasets directly to YOLOv5 for training with [Roboflow](https://roboflow.com/?ref=ultralytics) |
+3 视觉软件界面及功能说明
+
+（界面高清截图+功能介绍）图1
 
 
-<!-- ## <div align="center">Compete and Win</div>
 
-We are super excited about our first-ever Ultralytics YOLOv5 🚀 EXPORT Competition with **$10,000** in cash prizes!
+4 主要算法
 
-<p align="center">
-  <a href="https://github.com/ultralytics/yolov5/discussions/3213">
-  <img width="850" src="https://github.com/ultralytics/yolov5/releases/download/v1.0/banner-export-competition.png"></a>
-</p> -->
+本次视觉项目所采用的主要算法为Yolov5，实现了对目标物品的检测与识别，下面详细介绍其核心基础内容。
 
-## <div align="center">Why YOLOv5</div>
+4.1 网络结构图
 
-<p align="left"><img width="800" src="https://user-images.githubusercontent.com/26833433/136901921-abcfcd9d-f978-4942-9b97-0e3f202907df.png"></p>
-<details>
-  <summary>YOLOv5-P5 640 Figure (click to expand)</summary>
+![img](picture/图片1.png) 
 
-<p align="left"><img width="800" src="https://user-images.githubusercontent.com/26833433/136763877-b174052b-c12f-48d2-8bc4-545e3853398e.png"></p>
-</details>
-<details>
-  <summary>Figure Notes (click to expand)</summary>
+***\*图\*******\*2\**** Yolov5s网络结构图
 
-* **COCO AP val** denotes mAP@0.5:0.95 metric measured on the 5000-image [COCO val2017](http://cocodataset.org) dataset over various inference sizes from 256 to 1536.
-* **GPU Speed** measures average inference time per image on [COCO val2017](http://cocodataset.org) dataset using a [AWS p3.2xlarge](https://aws.amazon.com/ec2/instance-types/p3/) V100 instance at batch-size 32.
-* **EfficientDet** data from [google/automl](https://github.com/google/automl) at batch size 8.
-* **Reproduce** by `python val.py --task study --data coco.yaml --iou 0.7 --weights yolov5n6.pt yolov5s6.pt yolov5m6.pt yolov5l6.pt yolov5x6.pt`
-</details>
+在Yolov5的官方代码中，有四个版本的目标检测网络，其中Yolov5s网络深度最小、特征图宽度最小，其它三种则在此基础上不断加深加宽。本说明以Yolov5s为例，阐述其网络架构细节，其网络结构图如图2所示。
 
-### Pretrained Checkpoints
+网络可划分为输入端、Backbone、Neck及Prediction部分，如图3所示。其中输入端包含Mosaic数据增强、自适应锚框计算与自适应图片缩放；Backbone包含Focus结构、CSP结构；Neck包含FPN＋PAN结构；Prediction则包含GIOU_LOSS损失函数。
 
-[assets]: https://github.com/ultralytics/yolov5/releases
-[TTA]: https://github.com/ultralytics/yolov5/issues/303
+![img](picture/图片2.png) 
 
-|Model |size<br><sup>(pixels) |mAP<sup>val<br>0.5:0.95 |mAP<sup>val<br>0.5 |Speed<br><sup>CPU b1<br>(ms) |Speed<br><sup>V100 b1<br>(ms) |Speed<br><sup>V100 b32<br>(ms) |params<br><sup>(M) |FLOPs<br><sup>@640 (B)
-|---                    |---  |---    |---    |---    |---    |---    |---    |---
-|[YOLOv5n][assets]      |640  |28.4   |46.0   |**45** |**6.3**|**0.6**|**1.9**|**4.5**
-|[YOLOv5s][assets]      |640  |37.2   |56.0   |98     |6.4    |0.9    |7.2    |16.5
-|[YOLOv5m][assets]      |640  |45.2   |63.9   |224    |8.2    |1.7    |21.2   |49.0
-|[YOLOv5l][assets]      |640  |48.8   |67.2   |430    |10.1   |2.7    |46.5   |109.1
-|[YOLOv5x][assets]      |640  |50.7   |68.9   |766    |12.1   |4.8    |86.7   |205.7
-|                       |     |       |       |       |       |       |       |
-|[YOLOv5n6][assets]     |1280 |34.0   |50.7   |153    |8.1    |2.1    |3.2    |4.6
-|[YOLOv5s6][assets]     |1280 |44.5   |63.0   |385    |8.2    |3.6    |16.8   |12.6
-|[YOLOv5m6][assets]     |1280 |51.0   |69.0   |887    |11.1   |6.8    |35.7   |50.0
-|[YOLOv5l6][assets]     |1280 |53.6   |71.6   |1784   |15.8   |10.5   |76.8   |111.4
-|[YOLOv5x6][assets]<br>+ [TTA][TTA]|1280<br>1536 |54.7<br>**55.4** |**72.4**<br>72.3 |3136<br>- |26.2<br>- |19.4<br>- |140.7<br>- |209.8<br>- 
+***\*图\*******\*3\**** Yolov5s网络结构划分图
 
-<details>
-  <summary>Table Notes (click to expand)</summary>
+4.2 输入端
 
-* All checkpoints are trained to 300 epochs with default settings and hyperparameters.
-* **mAP<sup>val</sup>** values are for single-model single-scale on [COCO val2017](http://cocodataset.org) dataset.<br>Reproduce by `python val.py --data coco.yaml --img 640 --conf 0.001 --iou 0.65`
-* **Speed** averaged over COCO val images using a [AWS p3.2xlarge](https://aws.amazon.com/ec2/instance-types/p3/) instance. NMS times (~1 ms/img) not included.<br>Reproduce by `python val.py --data coco.yaml --img 640 --conf 0.25 --iou 0.45`
-* **TTA** [Test Time Augmentation](https://github.com/ultralytics/yolov5/issues/303) includes reflection and scale augmentations.<br>Reproduce by `python val.py --data coco.yaml --img 1536 --iou 0.7 --augment`
+4.2.1 Mosaic数据增强
 
-</details>
+Yolov5的输入端采用了和Yolov4同样的数据增强方式，将四张图片通过随机缩放、随机裁剪及随机排布的方式进行拼接，从而大大丰富了数据集，尤其是随机缩放增加了很多小目标，让网络的鲁棒性更好更优越。另外，使用Mosaic增强训练时，可以直接计算四张图片的数据，使得只需要较小的Mini-batch，一个GPU即可达到较好的处理效果。
 
-## <div align="center">Contribute</div>
+4.2.2 自适应锚框计算
 
-We love your input! We want to make contributing to YOLOv5 as easy and transparent as possible. Please see
-our [Contributing Guide](CONTRIBUTING.md) to get started, and fill out
-the [YOLOv5 Survey](https://ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey) to provide 
-thoughts and feedback on your experience with YOLOv5. Thank you!
+在Yolo系列算法中，对于不同的数据集，都具备初始设定长宽的锚框。而在网络训练过程中，需要在初始锚框的基础上输出预测框，进而和真实框对比，计算两者差距后反向更新来迭代网络参数。在之前的Yolo系列算法中，计算初始锚框的值时通过单独的程序运行的；而Yolov5则是将计算过程嵌入到代码中，在每次训练时自适应地计算不同训练集中的最佳锚框值。
 
-## <div align="center">Contact</div>
+4.2.3 自适应图片缩放
 
-For issues running YOLOv5 please visit [GitHub Issues](https://github.com/ultralytics/yolov5/issues). For business or
-professional support requests please visit [https://ultralytics.com/contact](https://ultralytics.com/contact).
+在常用的目标检测算法中，不同的图片具有不同的长宽，因此常将原始图片统一缩放至相同的标准尺寸，再送入检测网络中。而Yolov5算法则对此进行了改进，对原始图像自适应地增添最少的黑边，减少信息冗余，加快速度。
 
-<br>
+4.3 Backbone
 
-<div align="center">
-    <a href="https://github.com/ultralytics">
-        <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-social-github.png" width="3%"/>
-    </a>
-    <img width="3%" />
-    <a href="https://www.linkedin.com/company/ultralytics">
-        <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-social-linkedin.png" width="3%"/>
-    </a>
-    <img width="3%" />
-    <a href="https://twitter.com/ultralytics">
-        <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-social-twitter.png" width="3%"/>
-    </a>
-    <img width="3%" />
-    <a href="https://youtube.com/ultralytics">
-        <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-social-youtube.png" width="3%"/>
-    </a>
-    <img width="3%" />
-    <a href="https://www.facebook.com/ultralytics">
-        <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-social-facebook.png" width="3%"/>
-    </a>
-    <img width="3%" />
-    <a href="https://www.instagram.com/ultralytics/">
-        <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-social-instagram.png" width="3%"/>
-    </a>
-</div>
+4.3.1 Focus结构
+
+![img](picture/图片3.png) 
+
+***\*图\*******\*4\**** 切片操作示意图
+
+在Focus结构中，较为关键的是其切片操作，其原理与细节如图4所示。在Yolov5算法中，将原始图像输入Focus结构后得到输出特征图，再经过卷积层，得到最终特征图。
+
+4.3.2 CSP结构
+
+CSP能够从网络结构设计的角度解决推理计算量大的问题，采用CSP模块将基础层的特征映射划分成两部分，然后通过跨阶段层次结构将它们合并，从而既减少了计算量，又保证了准确率。
+
+因此，Yolov5在主干网络中采用CSP结构，增强了CNN的学习能力，使其在轻量化的同时保持准确性，并降低了计算瓶颈与内存成本。
+
+4.4 Neck
+
+Yolov5和Yolov4类似，都采用了FPN+PAN的结构。其中，FPN是自顶向下的，将高层的特征信息通过上采样的方式进行传递融合，得到需要的特征图；而PAN结构则是自底向上的特征金字塔，两者结合从不同的主干层对不同的检测层进行参数聚合，进一步提高了特征提取的能力。但Yolov4的Neck结构中采用的是普通的卷积操作，而在Yolov5的Neck结构借鉴了CSP2，加强了网络特征融合的能力。
+
+4.5 Prediction
+
+目标检测任务的损失函数一般由Classification Loss即分类损失函数和Bounding Box Regression Loss即回归损失函数两部分构成。其中，本算法的Bounding Box Regression Loss采用GIOU_LOSS，该损失函数增加了相交尺度的衡量方式，即解决了边界框不重合时存在的问题。
+
+5 视觉软件工作流程图
+
+![img](picture/图片4.png) 
+
+***\*图\*******\*5\**** 视觉软件工作流程图
+
+图5为视觉软件工作流程图，当按下可视化界面的“开始”按钮后，即可通过摄像头采集图像，再输入进Yolov5网络，最后输出目标物品类别与数量并通过可视化界面显示。
